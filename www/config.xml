@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget 
+    id="com.internal.app.pub" 
+    version="0.0.1.63" 
+    xmlns="http://www.w3.org/ns/widgets" 
+    xmlns:gap="http://phonegap.com/ns/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+    <name>Waiting App</name>
+    <description>
+        PracticalGuideToMobileApps.com
+    </description>
+    <author email="nick@PracticalGuideToMobileApps.com" href="http://cordova.io">
+        Nick Reed
+    </author>
+    <content src="index.html" />
+
+    <access origin="*" />
+    
+    <gap:platform name="ios" />
+    <gap:platform name="android" />
+
+    <preference name="phonegap-version" value="3.5.0" />
+
+    <!-- Android SDK Version -->
+    <preference name="android-minSdkVersion" value="14" />
+    <!-- iOS Version -->
+    <preference name="deployment-target" value="7.0" />
+
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="false" />
+
+    <preference name="target-device" value="handset" />
+    <preference name="disallowOverscroll" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="detect-data-types" value="false" />
+
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
+
+    <preference name="URL_SCHEME" value="http" />
+    <preference name="URL_HOST" value="practicalguidetomobileapps.com" />
+
+
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="org.apache.cordova.contacts" version="0.2.9" />
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
+    <gap:plugin name="org.apache.cordova.camera" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.globalization" />
+    <gap:plugin name="org.apache.cordova.statusbar" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" />
+    <gap:plugin name="com.phonegap.plugins.barcodescanner" />
+    <gap:plugin name="com.verso.cordova.clipboard" />
+
+    <gap:plugin name="com.plugin.datepicker" />
+    <gap:plugin name="nl.x-services.plugins.socialsharing" />
+    <!-- <gap:plugin name="info.asankan.phonegap.smsplugin" /> -->
+    <gap:plugin name="nl.x-services.plugins.toast" />
+    <gap:plugin name="de.appplant.cordova.plugin.local-notification" />
+
+    <gap:plugin name="com.adobe.plugins.gaplugin" />
+
+
+    <!-- Android SingleInstance LaunchMode -->
+    <gap:config-file platform="android" parent="/manifest/application">
+        <activity android:launchMode="singleInstance" />
+    </gap:config-file>
+
+    
+    <gap:plugin name="nl.x-services.plugins.launchmyapp">
+        <param name="URL_SCHEME" value="guide" />
+    </gap:plugin>
+
+
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+    
+    <feature name="BarcodeScanner">
+        <param name="ios-package" value="CDVBarcodeScanner" />
+        <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+    </feature>
+
+    <feature name="SocialSharing">
+      <param name="ios-package" value="SocialSharing" />
+      <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+    </feature>
+
+    <feature name="Toast">
+      <param name="ios-package" value="Toast" />
+      <param name="android-package" value="nl.xservices.plugins.Toast" />
+    </feature>
+
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+
+    <feature name="Contacts">
+        <param name="android-package" value="org.apache.cordova.contacts.ContactManager"/>
+        <param name="ios-package" value="CDVContacts"/>
+    </feature>
+    
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="ios-package" value="CDVFile" />
+    </feature>
+
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.filetransfer.FileTransfer" />
+        <param name="ios-package" value="CDVFileTransfer" />
+    </feature>
+
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
+
+    <feature name="PushPlugin" >
+        <param name="android-package" value="com.plugin.gcm.PushPlugin"/>
+        <param name="ios-package" value="PushPlugin"/>
+    </feature>
+
+    <feature name="DatePickerPlugin">
+        <param name="android-package" value="com.plugin.datepicker.DatePickerPlugin"/>
+    </feature>
+    <feature name="DatePicker">
+        <param name="ios-package" value="DatePicker"/>
+    </feature>
+
+    <feature name="LocalNotification">
+        <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification"/>
+        <param name="ios-package" value="APPLocalNotification"/>
+    </feature>
+
+
+    <!-- Android -->
+    <icon src="res/icon/android/icon.png" gap:platform="android" />
+
+    <!-- ios 7+ -->
+    <!-- iPhone / iPod Touch  -->
+    <icon src="res/icon/ios/icon-60.png" gap:platform="ios" width="60" height="60" />
+    <icon src="res/icon/ios/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+
+    <!-- iPad -->
+    <icon src="res/icon/ios/icon-76.png" gap:platform="ios" width="76" height="76" />
+    <icon src="res/icon/ios/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+
+    <!-- Settings Icon -->
+    <icon src="res/icon/ios/icon-small.png" gap:platform="ios" width="29" height="29" />
+    <icon src="res/icon/ios/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+
+    <!-- Spotlight Icon -->
+    <icon src="res/icon/ios/icon-40.png" gap:platform="ios" width="40" height="40" />
+    <icon src="res/icon/ios/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+
+    <!-- ios 6 -->
+    <!-- iPhone / iPod Touch -->
+    <icon src="res/icon/ios/icon-57.png" gap:platform="ios" width="57" height="57" />
+    <icon src="res/icon/ios/icon@2x.png" gap:platform="ios" width="114" height="114" />
+
+    <!-- iPad -->
+    <icon src="res/icon/ios/icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="res/icon/ios/icon-72@2x.png" gap:platform="ios" width="144" height="144" />
+
+    <!-- iPad Spotlight and Settings Icon -->
+    <icon src="res/icon/ios/icon-50.png" gap:platform="ios" width="50" height="50" />
+    <icon src="res/icon/ios/icon-50@2x.png" gap:platform="ios" width="100" height="100" />
+
+
+    <gap:splash src="splash.png" />
+    <gap:splash src="splash/ios/Default_iphone5.png" gap:platform="ios" width="640" height="1136" />
+
+
+    <!-- <gap:plugin name="com.machenmusik.plugins.launchmyapp" version="3.1.2">
+        <param name="URL_SCHEME" value="ulu" />
+        <param name="HTTP_HOST" value="uluapp.com" />
+        <param name="HTTP_PATHPREFIX" value="/" />
+        <param name="HTTPS_HOST" value="uluapp.com" />
+        <param name="HTTPS_PATHPREFIX" value="/" />
+    </gap:plugin> -->
+
+    <!-- Hide Status Bar iOS -->
+    <!--
+    <gap:config-file platform="ios" parent="UIStatusBarHidden">
+        <true/>
+    </gap:config-file>
+    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
+        <false/>
+    </gap:config-file>
+    -->
+
+    <!-- icon image: https://www.flickr.com/photos/guwashi999/6556973511/in/photolist-aZqcMr-2gz7QT-5AdCWG-fw47vw-yMY1p-6CA23d-39Sitz-aSZQiD-5DC2uL-8sSt1m-bd5M6c-eqV9qd-mz5Nq-99dg3U-dnK7UM-8kZoqd-koBNhF-4benw-bDsGwR-cdjPEu-4gskLV-gxcw1i-nXPs47-eYd1dZ-6dVsLa-6YuQhF-9rVMrS-2HHfo-nsnByK-e1AZuE-7q3U8y-oh1xuD-5VVYyK-cazXTh-otmR1Q-nLG3jp-aTWugD-5G9n4L-6236Zk-jm3gZw-dZFjAh-6JQ7fN-iKNFMp-ogz2Xi-e2NcPb-4LUdp8-koCH3t-7fy6Yv-mSL4S-61XBp9/ -->
+
+
+</widget>
